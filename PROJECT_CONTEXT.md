@@ -33,9 +33,22 @@ Lorsqu'un chemin, un site ou un contenu est fourni, il pourra servir à comprend
 
 Les contenus issus de ces sources devront être reformulés et organisés avec fidélité. Les informations manquantes ne devront pas être inventées : elles seront précisées avec l'utilisateur au fur et à mesure.
 
+### Dossiers sources communiqués
+
+Les quatre dossiers suivants devront alimenter le portfolio ultérieurement. Les libellés reprennent les noms des dossiers ; les descriptions, dates, rôles et contenus à retenir restent à préciser.
+
+| Repère | Chemin local |
+| --- | --- |
+| MODACIRCULAR | `/Users/erwan/UNSYNC/MODACIRCULAR` |
+| brazilresidencylanding / viper | `/Users/erwan/brazilresidencylanding/viper` |
+| KEYRUS / front-keyrus | `/Users/erwan/KEYRUS/front-keyrus` |
+| portfolio2020 | `/Users/erwan/UNSYNC/portfolio2020` |
+
+Pour le moment, ces chemins sont uniquement enregistrés comme sources. Leur exploration, le lancement des environnements, les captures d'écran et l'intégration de leur contenu au portfolio sont reportés à une prochaine étape avec l'utilisateur. Leur contenu et leur accessibilité n'ont pas encore été vérifiés.
+
 ## Direction artistique
 
-La direction artistique n'est pas encore arrêtée.
+La direction artistique n'est pas encore arrêtée. Une première proposition et sa recherche de références sont documentées dans [ART_DIRECTION.md](ART_DIRECTION.md).
 
 Une phase ultérieure sera consacrée à la recherche de portfolios professionnels individuels suisses, avec une attention particulière possible pour Genève. Ces références devront aider à comprendre les codes visuels qui parlent aux professionnels en Suisse et à définir une direction artistique cohérente avec ce marché.
 
@@ -84,11 +97,11 @@ Chaque phase devra rester collaborative. Les décisions importantes de contenu, 
 - le projet dispose d'un squelette technique Astro ;
 - le présent document constitue le cadrage initial ;
 - aucun contenu détaillé sur le parcours ou les projets n'a encore été fourni ;
-- aucun chemin vers les projets sources n'a encore été communiqué ;
-- aucune recherche de références suisses n'a encore été effectuée ;
+- quatre chemins vers les dossiers sources ont été communiqués et sont enregistrés ci-dessus ; leur exploitation est prévue ultérieurement ;
+- une première recherche de huit références suisses est documentée dans ART_DIRECTION.md ;
 - aucune direction artistique définitive n'a été choisie ;
-- la timeline n'a pas encore été conçue ;
-- aucun développement ou changement visuel du portfolio n'est demandé pour cette première étape.
+- une esquisse visuelle de timeline à contenu fictif est intégrée à la démonstration ; son composant définitif reste à concevoir ensemble ;
+- une seule page Astro de démonstration de direction artistique est réalisée, avec du lorem ipsum et des projets fictifs, conformément à la deuxième demande.
 
 ## Informations à intégrer ultérieurement
 
@@ -122,3 +135,24 @@ Cette section servira de liste de suivi et sera précisée au fil des échanges 
 - Une timeline annuelle du parcours devra être conçue ultérieurement.
 - Les projets sources pourront être inspectés et lancés afin d'en produire des captures d'écran.
 - Pour cette étape initiale, aucun travail autre que la création du contexte ne doit être entrepris.
+
+### 19 septembre 2026 — Recherche et première démonstration
+
+- L'utilisateur autorise une recherche Internet approfondie sur les portfolios suisses, puis la réalisation d'une seule page de démonstration dans Astro, en HTML/CSS, avec du contenu fictif.
+- Recherche et choix consignés dans ART_DIRECTION.md, avec liens vers les sources et limites de consultation.
+- Proposition « Précision éditoriale » : typographie sans empattement, grille asymétrique, filets fins, fond clair, noir graphite et accent rouge.
+- Page locale comprenant une introduction, deux compositions typographiques de projets fictifs, une esquisse de parcours et une présentation en lorem ipsum.
+- Les choix graphiques, slogans et contenus illustratifs ne constituent pas une validation définitive ni des informations factuelles sur le parcours.
+- Aucune publication demandée à cette étape.
+
+### 19 septembre 2026 — Emplacement du portrait
+
+- Prévoir une photo personnelle dans le portfolio, à la demande de l'utilisateur.
+- Un cadre portrait au format 4:5 est réservé dans la section « À propos », à gauche du texte sur ordinateur et au-dessus sur mobile.
+- Un emplacement neutre « Photo à venir » est affiché en attendant la photo fournie par l'utilisateur.
+
+### 19 septembre 2026 — Enregistrement des projets sources
+
+- L'utilisateur fournit les dossiers MODACIRCULAR, brazilresidencylanding/viper, KEYRUS/front-keyrus et portfolio2020 pour alimenter le portfolio.
+- Les quatre chemins exacts sont conservés dans la section « Dossiers sources communiqués ».
+- La demande porte uniquement sur la mise à jour du contexte ; l'analyse et l'intégration des projets auront lieu plus tard.

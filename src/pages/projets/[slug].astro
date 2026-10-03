@@ -1,0 +1,93 @@
+---
+import '../../styles/global.css';
+import { projects } from '../../data/projects';
+import { projectScreenshots } from '../../data/projectScreenshots';
+import ProjectVisual from '../../components/ProjectVisual.astro';
+export function getStaticPaths() {
+  return projects.map((project, i) => ({ params: { slug: project.slug }, props: { project, next: projects[(i + 1) % projects.length] } }));
+}
+const { project, next } = Astro.props;
+const screenshots = projectScreenshots[project.slug] ?? [];
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={`${project.name}. Projet du portfolio d’Erwan. Présentation en préparation.`} />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{project.name} | Erwan / Portfolio</title>
+  </head>
+  <body id="haut">
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="header wrap">
+      <a class="wordmark" href="/" aria-label="Erwan, accueil">erwan<span>.</span></a>
+      <span class="header-caption">Développement informatique<br />Portfolio personnel</span>
+      <nav aria-label="Navigation principale">
+        <a href="/#projets" aria-current="true">Projets <sup>01</sup></a>
+        <a href="/#parcours">Parcours <sup>02</sup></a>
+        <a href="/#apropos">À propos <sup>03</sup></a>
+      </nav>
+    </header>
+    <main id="contenu" class="wrap case-page">
+      <section class="hero case-hero" aria-labelledby="project-title">
+        <div class="case-top"><a class="text-link" href="/#projets"><span aria-hidden="true">←</span> Tous les projets</a><span class="meta">Projet {project.index} / 04</span></div>
+        <h1 id="project-title">{project.name}<span class="red">.</span></h1>
+        <div class="case-intro"><span class="meta section-index">{project.label}</span><p>Présentation du projet en préparation.</p><a class="text-link" href="#presentation">Découvrir <span aria-hidden="true">↓</span></a></div>
+      </section>
+      <div class="case-cover"><ProjectVisual {...project} /></div>
+      <section id="presentation" class="section case-section" aria-labelledby="context-title">
+        <span class="meta section-index">01 / Présentation</span>
+        <div class="case-copy"><h2 id="context-title">Le contexte<span class="red">.</span></h2><p>Le contexte, les objectifs et les enjeux de {project.name} seront présentés ici.</p>
+          <dl class="case-facts"><div><dt class="meta">Période</dt><dd>À préciser</dd></div><div><dt class="meta">Rôle</dt><dd>À préciser</dd></div><div><dt class="meta">Technologies</dt><dd>À documenter</dd></div></dl>
+        </div>
+      </section>
+      <section class="section case-section" aria-labelledby="contribution-title"><span class="meta section-index">02 / Contribution</span><div class="case-copy"><h2 id="contribution-title">Mon intervention<span class="red">.</span></h2><p>Le détail de ma contribution, les choix de réalisation et les résultats seront ajoutés prochainement.</p></div></section>
+      <section class:list={['section', screenshots.length ? 'case-gallery-section' : 'case-section']} aria-labelledby="images-title">
+        <div class="case-gallery-heading"><span class="meta section-index">03 / En images</span><h2 id="images-title">Le projet à l’écran<span class="red">.</span></h2></div>
+        {screenshots.length ? <div class="case-gallery">{screenshots.map((shot, index) => <figure class="case-screenshot">
+          <button class="capture-link" type="button" data-gallery-open data-index={index} aria-label={`${shot.title}, agrandir la capture de ${project.name}`}><img src={shot.src} alt={shot.alt} width="1440" height="1000" loading="lazy" decoding="async" /><span class="capture-zoom meta" aria-hidden="true">Agrandir +</span></button>
+          <figcaption><span class="meta">{shot.title}</span><a class="text-link" href={shot.source} target="_blank" rel="noopener noreferrer">Voir le site <span aria-hidden="true">↗</span></a></figcaption>
+        </figure>)}<p class="meta capture-date">Captures du site public · Cliquer pour agrandir</p></div> : <div class="case-placeholder"><span class="meta">Aperçu du projet</span><span>Visuels à venir<span class="red">.</span></span><span class="meta">{project.name}</span></div>}
+      </section>
+      {screenshots.length > 0 && <dialog class="gallery-dialog" data-gallery-dialog aria-label={`Galerie ${project.name}`}>
+        <div class="gallery-dialog-bar"><span class="meta" data-gallery-counter></span><button type="button" class="gallery-close" data-gallery-close aria-label="Fermer la galerie">Fermer ×</button></div>
+        <div class="gallery-dialog-visual"><button type="button" class="gallery-arrow gallery-prev" data-gallery-prev aria-label="Image précédente">←</button><img data-gallery-image src="" alt="" /><button type="button" class="gallery-arrow gallery-next" data-gallery-next aria-label="Image suivante">→</button></div>
+        <div class="gallery-dialog-caption"><span data-gallery-title></span><a class="text-link" data-gallery-source href="" target="_blank" rel="noopener noreferrer">Voir le site <span aria-hidden="true">↗</span></a></div>
+      </dialog>}
+      <a class="case-next" href={`/projets/${next.slug}/`}><span class="meta section-index">Projet suivant / {next.index}</span><span class="case-next-name">{next.name}</span><span class="red case-next-arrow" aria-hidden="true">↗</span></a>
+    </main>
+    <footer class="wrap footer"><a class="wordmark" href="/" aria-label="Erwan, accueil">erwan<span>.</span></a><span class="meta">Portfolio / 2026</span><a class="text-link" href="#haut">Retour en haut <span aria-hidden="true">↑</span></a></footer>
+    {screenshots.length > 0 && <script define:vars={{ screenshots }}>
+      const dialog = document.querySelector('[data-gallery-dialog]');
+      const image = dialog?.querySelector('[data-gallery-image]');
+      const title = dialog?.querySelector('[data-gallery-title]');
+      const source = dialog?.querySelector('[data-gallery-source]');
+      const counter = dialog?.querySelector('[data-gallery-counter]');
+      let currentIndex = 0;
+
+      const showImage = (index) => {
+        currentIndex = (index + screenshots.length) % screenshots.length;
+        const shot = screenshots[currentIndex];
+        image.src = shot.src;
+        image.alt = shot.alt;
+        title.textContent = shot.title;
+        source.href = shot.source;
+        counter.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${String(screenshots.length).padStart(2, '0')}`;
+      };
+
+      document.querySelectorAll('[data-gallery-open]').forEach((button) => button.addEventListener('click', () => {
+        showImage(Number(button.dataset.index));
+        dialog.showModal();
+      }));
+      dialog?.querySelector('[data-gallery-close]')?.addEventListener('click', () => dialog.close());
+      dialog?.querySelector('[data-gallery-prev]')?.addEventListener('click', () => showImage(currentIndex - 1));
+      dialog?.querySelector('[data-gallery-next]')?.addEventListener('click', () => showImage(currentIndex + 1));
+      dialog?.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+      dialog?.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') showImage(currentIndex - 1);
+        if (event.key === 'ArrowRight') showImage(currentIndex + 1);
+      });
+    </script>}
+  </body>
+</html>

@@ -1,0 +1,302 @@
+---
+import '../styles/global.css';
+import '../styles/vision.css';
+
+const profiles = [
+  {
+    era: 'Avant les assistants IA',
+    role: 'Développeur junior',
+    detail: 'Le temps et la volonté compensent une expertise encore en construction.',
+    values: { time: 65, expertise: 20, features: 15 },
+  },
+  {
+    era: 'Avant les assistants IA',
+    role: 'Développeur expérimenté',
+    detail: 'L’expérience améliore les décisions et la livraison, mais l’exécution reste longue.',
+    values: { time: 45, expertise: 35, features: 20 },
+  },
+  {
+    era: 'Avec les assistants IA',
+    role: 'Développeur junior',
+    detail: 'La production accélère fortement, mais le recul et le contexte restent à construire.',
+    values: { time: 30, expertise: 15, features: 55 },
+  },
+  {
+    era: 'Mon positionnement aujourd’hui',
+    role: 'Développeur-orchestrateur',
+    detail: 'Je consacre moins de temps à l’exécution et davantage de valeur à l’expertise, aux résultats et aux prochains potentiels à activer.',
+    values: { time: 12, expertise: 46, features: 42 },
+    featured: true,
+  },
+];
+
+const orbitItems = [
+  ['Contexte', 'Comprendre le client et le problème réel.'],
+  ['Design', 'Lire la maquette et préserver l’intention.'],
+  ['Code', 'Construire, relire et maintenir le système.'],
+  ['CMS & données', 'Structurer les contenus et les flux.'],
+  ['API', 'Relier les services et automatiser.'],
+  ['Marketing', 'Connecter le produit à son acquisition.'],
+  ['Vente', 'Transformer une idée en valeur lisible.'],
+  ['Déploiement', 'Livrer et faire évoluer le produit.'],
+];
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="La vision personnelle d’Erwan sur le métier de développeur à l’ère de l’intelligence artificielle." />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Développer à l’ère de l’IA | Erwan</title>
+  </head>
+  <body id="haut" class="vision-page">
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+    <header class="header wrap">
+      <a class="wordmark" href="/" aria-label="Erwan, accueil">erwan<span>.</span></a>
+      <span class="header-caption">Développement informatique<br />Portfolio personnel</span>
+      <nav aria-label="Navigation principale">
+        <a href="/#projets">Projets <sup>01</sup></a>
+        <a href="/#parcours">Parcours <sup>02</sup></a>
+        <a href="/#apropos">À propos <sup>03</sup></a>
+      </nav>
+    </header>
+
+    <main id="contenu" class="wrap">
+      <section class="vision-hero" aria-labelledby="vision-title">
+        <div class="vision-kicker meta"><span class="square"></span> Point de vue personnel <span>2026</span></div>
+        <h1 id="vision-title">Moins de temps<span class="red">.</span><br />Plus de vision<span class="red">.</span></h1>
+        <div class="vision-hero-copy">
+          <p class="meta">Développer à l’ère de l’IA</p>
+          <div>
+            <p>Je ne crois pas que la valeur d’un développeur disparaisse lorsque le code devient plus rapide à produire. Je crois qu’elle se déplace.</p>
+            <p>Je vends moins de temps d’exécution. Je vends davantage d’expertise, de créativité et de fonctionnalités réellement utiles.</p>
+          </div>
+          <a class="text-link" href="#valeur">Voir le modèle <span aria-hidden="true">↓</span></a>
+        </div>
+      </section>
+
+      <section id="valeur" class="section vision-section" aria-labelledby="value-title">
+        <div class="vision-section-heading">
+          <span class="meta section-index">01 / Le déplacement</span>
+          <div>
+            <h2 id="value-title">La valeur change<br />de centre de gravité<span class="red">.</span></h2>
+            <p class="vision-lead">Les LLM réduisent le temps nécessaire pour exécuter. Ils ne remplacent ni le recul, ni le jugement, ni l’expérience accumulée sur le terrain.</p>
+          </div>
+        </div>
+
+        <div class="value-legend meta" aria-label="Légende des jauges">
+          <span><i class="legend-swatch swatch-time"></i>Temps d’exécution</span>
+          <span><i class="legend-swatch swatch-expertise"></i>Expertise</span>
+          <span><i class="legend-swatch swatch-features"></i>Fonctionnalités utiles</span>
+        </div>
+
+        <div class="profile-comparison">
+          {profiles.map((profile) => (
+            <article class:list={['value-profile', { 'is-featured': profile.featured }]}>
+              <div class="value-profile-copy">
+                <p class="meta">{profile.era}</p>
+                <h3>{profile.role}</h3>
+                <p>{profile.detail}</p>
+              </div>
+              <div
+                class="value-meter"
+                role="img"
+                aria-label={`${profile.role} : ${profile.values.time}% de temps d’exécution, ${profile.values.expertise}% d’expertise et ${profile.values.features}% de fonctionnalités utiles. Proportions illustratives.`}
+              >
+                <span class="meter-time" style={`width:${profile.values.time}%`}><b>{profile.values.time}%</b></span>
+                <span class="meter-expertise" style={`width:${profile.values.expertise}%`}><b>{profile.values.expertise}%</b></span>
+                <span class="meter-features" style={`width:${profile.values.features}%`}><b>{profile.values.features}%</b></span>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <p class="model-note meta">Modèle conceptuel. Les pourcentages rendent visible le déplacement de valeur ; ils ne proviennent pas d’une mesure statistique.</p>
+      </section>
+
+      <section class="section vision-section" aria-labelledby="orchestration-title">
+        <div class="vision-section-heading">
+          <span class="meta section-index">02 / L’orchestration</span>
+          <div>
+            <h2 id="orchestration-title">L’IA accélère.<br />L’expérience dirige<span class="red">.</span></h2>
+            <p class="vision-lead">Ma valeur n’est plus d’écrire chaque ligne à la main. Elle est de comprendre le système entier, de donner le bon contexte et de reconnaître ce qui ne fonctionne pas.</p>
+          </div>
+        </div>
+
+        <div class="orchestration-map" aria-label="Les domaines orchestrés par le développeur expérimenté">
+          <div class="orchestration-core">
+            <span class="meta">Mon rôle</span>
+            <strong>Comprendre<br />Orchestrer<br />Décider</strong>
+            <span>Le LLM accélère l’exécution.</span>
+          </div>
+          <div class="orchestration-nodes">
+            {orbitItems.map(([title, text], index) => (
+              <article class="orchestration-node" style={`--node:${index + 1}`}>
+                <span class="meta">{String(index + 1).padStart(2, '0')}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section vision-section creative-section" aria-labelledby="creative-title">
+        <span class="meta section-index">03 / La créativité</span>
+        <div>
+          <h2 id="creative-title">Savoir quoi construire devient aussi important que savoir le construire<span class="red">.</span></h2>
+          <blockquote>
+            <p>« L’IA peut accélérer l’exécution. Elle ne remplace pas la vision précise de ce que je veux créer. »</p>
+          </blockquote>
+          <div class="creative-copy">
+            <p>Je ne demande pas à l’IA de produire une solution générique. Je forme une image mentale, je lui donne une direction, puis je contrôle, je corrige et j’affine.</p>
+            <p>La créativité consiste à relier des outils, des contraintes et des besoins pour faire apparaître une solution qui n’était pas encore formulée.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section vision-section proposal-section" aria-labelledby="proposal-title">
+        <div class="vision-section-heading">
+          <span class="meta section-index">04 / Proposer</span>
+          <div>
+            <h2 id="proposal-title">Le temps gagné doit devenir<br />de nouvelles possibilités<span class="red">.</span></h2>
+            <p class="vision-lead">Produire plus vite ne suffit pas. Je dois utiliser cette capacité pour détecter les bons outils, les bonnes connexions et les prochaines optimisations à proposer.</p>
+          </div>
+        </div>
+
+        <div class="proposal-flow" aria-label="De l’exécution accélérée aux nouvelles solutions proposées">
+          <div><span class="meta">01</span><strong>Exécution accélérée</strong><small>Les LLM réduisent le temps nécessaire pour livrer.</small></div>
+          <div><span class="meta">02</span><strong>Capacité libérée</strong><small>Davantage d’espace pour comprendre et explorer.</small></div>
+          <div><span class="meta">03</span><strong>Créativité + expertise</strong><small>Déceler les connexions et les potentiels utiles.</small></div>
+          <div><span class="meta">04</span><strong>Solutions proposées</strong><small>Expliquer, hiérarchiser, vendre puis réaliser.</small></div>
+        </div>
+
+        <div class="proposal-copy">
+          <p>Être commercial, pour moi, ne consiste pas à pousser toujours plus de fonctionnalités. Cela consiste d’abord à savoir proposer : comprendre le fonctionnement du client, faire apparaître une possibilité et montrer concrètement pourquoi elle mérite d’être développée.</p>
+          <p>Comme une solution prend moins de temps à exécuter, je dois valoriser davantage mon expérience, mon jugement et ma capacité d’orchestration, mais aussi ma capacité à trouver ce qu’il serait pertinent de faire ensuite.</p>
+        </div>
+      </section>
+
+      <section class="section vision-section" aria-labelledby="loop-title">
+        <div class="vision-section-heading">
+          <span class="meta section-index">05 / Le terrain</span>
+          <div>
+            <h2 id="loop-title">Les projets personnels<br />nourrissent l’expertise<span class="red">.</span></h2>
+            <p class="vision-lead">Créer mes propres produits m’oblige à rencontrer le marketing, la vente, les utilisateurs et les opérations. Cette expérience améliore ensuite ce que je peux proposer à mes clients.</p>
+          </div>
+        </div>
+
+        <ol class="learning-loop" aria-label="Boucle d’apprentissage entre expérience et expertise">
+          <li><span class="loop-number">01</span><strong>Expérience</strong><small>Développer et travailler avec des clients.</small></li>
+          <li><span class="loop-number">02</span><strong>Vision métier</strong><small>Comprendre ce qui aide vraiment une activité.</small></li>
+          <li><span class="loop-number">03</span><strong>Idée</strong><small>Imaginer un outil ou une automatisation utile.</small></li>
+          <li><span class="loop-number">04</span><strong>Réalisation</strong><small>Livrer plus vite avec l’IA comme accélérateur.</small></li>
+          <li><span class="loop-number">05</span><strong>Retour du terrain</strong><small>Observer, corriger et enrichir l’expertise.</small></li>
+        </ol>
+      </section>
+
+      <section class="section vision-section cockpit-section" aria-labelledby="cockpit-title">
+        <div class="vision-section-heading">
+          <span class="meta section-index">06 / Le poste de pilotage</span>
+          <div>
+            <h2 id="cockpit-title">Un projet.<br />Un contexte partagé<span class="red">.</span></h2>
+            <p class="vision-lead">Je vois le repository comme une mémoire et un centre de commande. Le LLM s’intègre à mon environnement de développeur ; il ne le remplace pas.</p>
+          </div>
+        </div>
+
+        <figure class="workflow-capture">
+          <div class="workflow-image-frame">
+            <img
+              src="/images/vision/workflow-vscode-codex.webp"
+              alt="Environnement de travail VS Code sur le projet Keyrus, réunissant le code, les fichiers, l’application locale, plusieurs terminaux et les échanges avec Codex."
+              width="1800"
+              height="1127"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption>
+            <span class="meta">Workflow réel / Projet Keyrus</span>
+            <p>Je garde le code, les fichiers, l’aperçu local et les terminaux sous les yeux. Codex travaille dans ce contexte ; je vérifie les changements et je reste responsable du versionning et des commits.</p>
+          </figcaption>
+        </figure>
+
+        <div class="cockpit-diagram">
+          <div class="cockpit-repo">
+            <span class="meta">Repository + IDE + LLM connecté</span>
+            <strong>Le QG<br />du business.</strong>
+          </div>
+          <ul>
+            <li>Design</li><li>Code</li><li>CMS</li><li>Données</li><li>API</li><li>Déploiement</li><li>Marketing</li><li>Vente</li>
+          </ul>
+        </div>
+
+        <div class="repo-headquarters">
+          <article>
+            <span class="meta">01 / Centraliser</span>
+            <h3>Une mémoire structurée<span class="red">.</span></h3>
+            <p>Code, documentation, décisions, contenus, schémas et configurations utiles restent proches les uns des autres et versionnés.</p>
+          </article>
+          <article>
+            <span class="meta">02 / Monitorer</span>
+            <h3>Un dashboard du projet<span class="red">.</span></h3>
+            <p>Le même environnement donne accès aux déploiements, erreurs, automatisations et indicateurs nécessaires pour comprendre l’activité.</p>
+          </article>
+          <article>
+            <span class="meta">03 / Agir</span>
+            <h3>Un LLM connecté<span class="red">.</span></h3>
+            <p>Avec le contexte du repository et des API autorisées, je peux analyser, construire, documenter et piloter sans repartir de zéro.</p>
+          </article>
+        </div>
+
+        <blockquote class="repo-statement">
+          <p>« Pour un petit ou moyen projet, je veux faire du repository le QG du business. »</p>
+          <span class="meta">Centraliser le contexte · Monitorer l’activité · Agir depuis le même endroit</span>
+        </blockquote>
+
+        <div class="analytics-example">
+          <div class="analytics-example-heading">
+            <span class="meta">Exemple concret / Viper</span>
+            <div>
+              <h3>Analytics Studio<span class="red">.</span></h3>
+              <p>J’ai construit ce dashboard directement dans le projet pour agréger les données de plusieurs sites et outils. Depuis VS Code, je peux observer le trafic, les leads, les ventes et les campagnes email, puis agir dans le même contexte.</p>
+            </div>
+          </div>
+
+          <div class="analytics-gallery">
+            <figure>
+              <a href="/images/vision/analytics-studio-overview.webp" target="_blank" rel="noopener noreferrer" aria-label="Agrandir la vue multisite d’Analytics Studio dans un nouvel onglet">
+                <img src="/images/vision/analytics-studio-overview.webp" alt="Dashboard Analytics Studio affiché dans VS Code, avec une vue des utilisateurs, sessions, leads, clics et ventes pour plusieurs marchés." width="1800" height="1129" loading="lazy" decoding="async" />
+              </a>
+              <figcaption><span class="meta">01 / Vue multisite</span><span>Trafic, leads, clics et ventes</span></figcaption>
+            </figure>
+            <figure>
+              <a href="/images/vision/analytics-studio-emails.webp" target="_blank" rel="noopener noreferrer" aria-label="Agrandir la vue des campagnes email d’Analytics Studio dans un nouvel onglet">
+                <img src="/images/vision/analytics-studio-emails.webp" alt="Dashboard Analytics Studio affiché dans VS Code, avec les performances des campagnes Brevo et des emails automatiques." width="1800" height="1127" loading="lazy" decoding="async" />
+              </a>
+              <figcaption><span class="meta">02 / Emails</span><span>Campagnes, automatisations et signaux</span></figcaption>
+            </figure>
+          </div>
+
+          <p class="analytics-note meta">Le repository centralise le dashboard, les définitions et les connexions. Les données opérationnelles restent récupérées depuis les services autorisés.</p>
+        </div>
+      </section>
+
+      <section class="vision-closing" aria-labelledby="closing-title">
+        <span class="meta">Ce que je propose</span>
+        <h2 id="closing-title">Pas seulement produire plus vite<span class="red">.</span><br />Construire plus juste<span class="red">.</span></h2>
+        <p>J’apporte l’expérience nécessaire pour comprendre un projet, orchestrer ses outils, imaginer les bonnes fonctionnalités et les transformer en résultats concrets.</p>
+        <a class="text-link" href="/#projets">Voir les projets qui construisent cette vision <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer class="wrap footer">
+      <a class="wordmark" href="/">erwan<span>.</span></a>
+      <span class="meta">Vision / Développeur & IA / Étude 2026</span>
+      <a class="text-link" href="#haut">Retour en haut <span aria-hidden="true">↑</span></a>
+    </footer>
+  </body>
+</html>

@@ -62,3 +62,42 @@ La page reste un aperçu local. Aucune publication n'est prévue à cette étape
 - Équilibre entre une présentation éditoriale et un dossier plus conventionnel.
 - Place des véritables captures une fois les projets fournis.
 - Densité et forme de la future timeline.
+
+## Étude comparative 02
+
+Mise à jour du 29 septembre 2026.
+
+Une page de comparaison est disponible sur `/directions-artistiques/`. Elle applique le même contenu professionnel réel à quatre systèmes visuels afin que le choix porte sur la direction artistique plutôt que sur les différences de contenu.
+
+### Principes retenus
+
+La Bibliothèque nationale suisse décrit le style international par la précision, la grille typographique, les caractères sans serif, une composition rationnelle, peu d’ornement et un usage mesuré de la couleur. Les recherches actuelles montrent cependant que les portfolios suisses ne se réduisent pas à une esthétique unique. La clarté du métier, l’expérience datée, le rôle précis et les projets contextualisés restent plus importants que l’imitation littérale d’un style historique.
+
+Références complémentaires consultées :
+
+- [Bibliothèque nationale suisse, The International Style 1950–1970](https://www.nb.admin.ch/en/the-international-style-1950-1970)
+- [Jérôme Haas, développeur front-end à Zurich](https://jeromehaas.ch/)
+- [jobs.ch, guide de préparation à la recherche d’emploi](https://www.jobs.ch/de/job-coach/wp-content/uploads/2024/03/jobs_de_guide-to-preparing-for-your-job-search_job-search.pdf)
+
+### Les quatre pistes
+
+1. **Précision éditoriale** : la direction actuelle, avec fond cassé, rouge profond, titres monumentaux et grille asymétrique.
+2. **Dossier exécutif** : une approche calme et institutionnelle, proche d’un dossier professionnel premium, avec bleu profond et titres serif.
+3. **Grille helvétique** : la piste la plus proche du style typographique international, avec contraste noir, blanc et rouge, informations très structurées et typographie directe.
+4. **Signal numérique** : une variante sombre et technique, conçue pour exprimer la maîtrise des systèmes et de l’IA sans adopter une esthétique de startup démonstrative.
+5. **Clarté alpine** : une proposition très aérée et lumineuse, avec un bleu calme, de grands espaces et une lecture particulièrement directe.
+6. **Rapport d’impact** : une présentation fondée sur les preuves, les durées, les contributions et les dimensions de l’expérience.
+7. **Atelier éditorial** : une piste plus personnelle, chaleureuse et narrative, qui conserve une structure professionnelle.
+8. **Système produit** : une direction qui rend visibles l’architecture, les connexions et le rôle d’orchestration du développeur.
+
+La page est volontairement non indexée. Elle sert uniquement à comparer, choisir et éventuellement combiner plusieurs pistes.
+
+## Récit brut de l’utilisateur
+
+### 29 septembre 2026, demande de variantes
+
+> Autre chose, on l'avait fait sur un autre projet, mais j'aimerais bien, je crois que dans le contexte, je t'avais donné des consignes pour la direction artistique de ce site. Cette direction artistique me plaît, mais j'aimerais bien que tu m'en fasses plusieurs autres. Alors tu me les mets sous d'autres pages, je sais pas, tu me fais des routes ou tu me mets d'autres directions artistiques, tous sur une page, pour que je vois un peu ce que ça donne. et pour qu'on s'oriente vers quelque chose qui me correspond. Alors les premières... Il me semble que tu as dans le contexte les premières. Uh Les premières consigne alors j'avais dit quelque chose d'épuré quelque chose qui ressemble à la a ce qui se fait en Suisse pour séduire potentiellement un public suisse mais donc on reste là dessus épuré plus tu vas chercher plutôt de du côté de ce qui fonctionne en Suisse de ce qui de ce qu'attendent les recruteurs suisses en restant sobre voilà on veut on veut montrer l'expérience on veut montrer on est compétent et tu me fais plusieurs dé tu me fais une page qui regroupe toutes les DA tu vois et comme ça je peux regarder rapidement des directions artistiques différentes, toujours avec les mêmes consignes mais différents pour voir un petit peu après peut-être qu'on fera un mix de plusieurs pour voir ce qui me plaît le plus
+
+### 29 septembre 2026, demande de pistes supplémentaires
+
+> Ok très bien, est-ce que tu peux me faire d'autres DA direction artistiques pour que je vois et j'ai un peu plus d'inspiration ?

@@ -1,0 +1,120 @@
+---
+import '../styles/directions.css';
+
+const directions = [
+  { id: 'precision', number: '01', name: 'Précision éditoriale', note: 'DA actuelle', color: '#c93423' },
+  { id: 'dossier', number: '02', name: 'Dossier exécutif', note: 'Sobre & institutionnel', color: '#17324d' },
+  { id: 'grille', number: '03', name: 'Grille helvétique', note: 'Direct & typographique', color: '#ed1c24' },
+  { id: 'signal', number: '04', name: 'Signal numérique', note: 'Technique & contemporain', color: '#a8ff60' },
+  { id: 'alpine', number: '05', name: 'Clarté alpine', note: 'Aéré & lumineux', color: '#3978d6' },
+  { id: 'impact', number: '06', name: 'Rapport d’impact', note: 'Preuves & résultats', color: '#ff5a36' },
+  { id: 'atelier', number: '07', name: 'Atelier éditorial', note: 'Humain & singulier', color: '#754d3d' },
+  { id: 'systeme', number: '08', name: 'Système produit', note: 'Architecture & méthode', color: '#5d55e8' },
+];
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Comparatif de directions artistiques pour le portfolio d’Erwan." />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Directions artistiques | Erwan / Portfolio</title>
+  </head>
+  <body>
+    <header class="lab-header">
+      <a href="/" class="lab-back">← Portfolio</a>
+      <div><span class="lab-kicker">Étude comparative / 2026</span><h1>Directions artistiques</h1></div>
+      <p>Quatre systèmes visuels appliqués au même profil et aux mêmes projets.</p>
+    </header>
+
+    <nav class="direction-nav" aria-label="Directions artistiques">
+      {directions.map((direction) => <a href={`#${direction.id}`}>
+        <span class="swatch" style={`--swatch:${direction.color}`}></span>
+        <span><b>{direction.number}</b> {direction.name}<small>{direction.note}</small></span>
+      </a>)}
+    </nav>
+
+    <main>
+      <section id="precision" class="direction direction-precision" aria-labelledby="precision-title">
+        <div class="direction-label"><span>01</span><div><strong id="precision-title">Précision éditoriale</strong><small>La direction actuelle · chaleureuse, asymétrique, expressive</small></div></div>
+        <div class="precision-page demo-page">
+          <header><b>erwan<span>.</span></b><p>Développeur front-end<br />Produit & IA</p><nav>Projets&nbsp;&nbsp; Parcours&nbsp;&nbsp; À propos</nav></header>
+          <div class="precision-hero"><small>PORTFOLIO / ÉDITION 2026</small><h2>Des idées.<br />Du code<span>.</span><br /><em>Du concret.</em></h2><p>Je conçois et fais évoluer des produits web en reliant développement, compréhension métier et usages concrets.</p></div>
+          <div class="precision-projects"><article><img src="/images/projects/keyrus-home.webp" alt="Aperçu du site Keyrus" /><small>01 / COLLABORATION</small><h3>Keyrus</h3></article><article><img src="/images/projects/circular-home.webp" alt="Aperçu de circular.moda" /><small>02 / PRODUIT</small><h3>circular.moda</h3></article></div>
+          <div class="precision-timeline"><span>2021—Aujourd’hui</span><div><small>KEYRUS · REFONTE · CMS · IA</small><h3>Construire dans la durée.</h3><p>Plus de cinq ans à développer et faire évoluer un écosystème web international.</p></div></div>
+        </div>
+      </section>
+
+      <section id="dossier" class="direction direction-dossier" aria-labelledby="dossier-title">
+        <div class="direction-label"><span>02</span><div><strong id="dossier-title">Dossier exécutif</strong><small>Calme, structuré, orienté recruteur et missions longues</small></div></div>
+        <div class="dossier-page demo-page">
+          <header><div class="dossier-mark">EL</div><nav>Profil&nbsp;&nbsp;&nbsp; Expérience&nbsp;&nbsp;&nbsp; Projets</nav><span>Genève / Suisse</span></header>
+          <div class="dossier-hero"><p class="dossier-overline">Développeur front-end indépendant</p><h2>Transformer la complexité<br />en produits clairs.</h2><div class="dossier-intro"><p>Développement web, systèmes de contenus et outils métier. Une expérience construite dans la durée, complétée par une pratique directe du produit et du business.</p><dl><div><dt>Expérience</dt><dd>10+ ans</dd></div><div><dt>Collaboration</dt><dd>2021—Aujourd’hui · Keyrus</dd></div><div><dt>Langues</dt><dd>FR · EN · ES</dd></div></dl></div></div>
+          <div class="dossier-feature"><div><span>Expérience principale</span><h3>Keyrus</h3><p>Refonte corporate, design system, Contentful, SEO et évolution vers une nouvelle plateforme orientée IA.</p><a href="/projets/keyrus/">Voir l’étude de cas →</a></div><img src="/images/projects/keyrus-playbook.webp" alt="Aperçu du Playbook Keyrus" /></div>
+          <div class="dossier-list"><article><b>2024—</b><span>Résidence au Brésil</span><small>Produit · Acquisition · Vente</small></article><article><b>2024—</b><span>circular.moda</span><small>Marketplace · Automatisation</small></article></div>
+        </div>
+      </section>
+
+      <section id="grille" class="direction direction-grille" aria-labelledby="grille-title">
+        <div class="direction-label"><span>03</span><div><strong id="grille-title">Grille helvétique</strong><small>Rationnelle, contrastée, inspirée du style typographique international</small></div></div>
+        <div class="grille-page demo-page">
+          <header><b>ERWAN<br />LEBLOIS</b><span>PORTFOLIO<br />13+ ANNÉES</span><nav>INDEX<br />CONTACT</nav></header>
+          <div class="grille-hero"><span class="grille-index">01/04</span><h2>DÉVELOPPEUR<br />FRONT-END<span>↗</span></h2><p>Des interfaces aux systèmes. Du besoin métier au produit livré.</p></div>
+          <div class="grille-matrix"><article><span>01</span><div><small>2021—AUJOURD’HUI</small><h3>KEYRUS</h3><p>ÉCOSYSTÈME WEB<br />DESIGN SYSTEM<br />CMS & IA</p></div></article><article><span>02</span><div><small>DEPUIS 2024</small><h3>PRODUITS</h3><p>CIRCULAR.MODA<br />BRAZIL RESIDENCY<br />VENTE & MARKETING</p></div></article></div>
+          <footer><span>REACT · NEXT.JS · CONTENTFUL</span><span>GENÈVE / À DISTANCE</span><span>2026</span></footer>
+        </div>
+      </section>
+
+      <section id="signal" class="direction direction-signal" aria-labelledby="signal-title">
+        <div class="direction-label"><span>04</span><div><strong id="signal-title">Signal numérique</strong><small>Technique, précis, contemporain sans esthétique “startup”</small></div></div>
+        <div class="signal-page demo-page">
+          <header><b><i></i> erwan.dev</b><nav>[01] Travail&nbsp;&nbsp; [02] Parcours&nbsp;&nbsp; [03] Contact</nav><span>Disponible / CH</span></header>
+          <div class="signal-hero"><p>// FRONT-END · PRODUCT · AI</p><h2>Je construis des systèmes web<br /><span>utiles, lisibles, évolutifs.</span></h2><div><p>Développeur freelance, j’accompagne les produits dans la durée et j’expérimente leur dimension business sur mes propres projets.</p><span class="signal-status">● 2021—AUJOURD’HUI / KEYRUS</span></div></div>
+          <div class="signal-work"><article><span>CASE_01</span><h3>Keyrus</h3><p>Corporate ecosystem<br />CMS operations<br />AI repositioning</p><b>→</b></article><article><span>LAB_02</span><h3>circular.moda</h3><p>Marketplace<br />Growth systems<br />Automation</p><b>→</b></article><article><span>LAB_03</span><h3>Brazil Residency</h3><p>Content product<br />Acquisition<br />Sales</p><b>→</b></article></div>
+          <footer><span>13+ YEARS / BUILDING FOR THE WEB</span><span>SCROLL_TO_EXPLORE ↓</span></footer>
+        </div>
+      </section>
+
+      <section id="alpine" class="direction direction-alpine" aria-labelledby="alpine-title">
+        <div class="direction-label"><span>05</span><div><strong id="alpine-title">Clarté alpine</strong><small>Beaucoup d’espace, un bleu calme et une lecture immédiate</small></div></div>
+        <div class="alpine-page demo-page">
+          <header><b>Erwan Leblois</b><nav>Travail&nbsp;&nbsp;&nbsp; Parcours&nbsp;&nbsp;&nbsp; Contact</nav><span>Développeur freelance</span></header>
+          <div class="alpine-hero"><p>FRONT-END · PRODUIT · INTELLIGENCE ARTIFICIELLE</p><h2>Concevoir clairement.<br />Construire durablement.</h2><div><span>Basé en Europe<br />Disponible à distance</span><p>J’aide les équipes à transformer leurs besoins métier en interfaces, outils et systèmes web fiables.</p></div></div>
+          <div class="alpine-feature"><img src="/images/projects/keyrus-home.webp" alt="Aperçu du site Keyrus" /><div><small>COLLABORATION PRINCIPALE / 01</small><h3>Keyrus</h3><p>Une collaboration continue depuis 2021, de la refonte corporate à la nouvelle plateforme orientée IA.</p><a href="/projets/keyrus/">Découvrir le projet ↗</a></div></div>
+          <div class="alpine-stats"><div><b>2021—Aujourd’hui</b><span>Collaboration Keyrus</span></div><div><b>3 langues</b><span>Français, anglais, espagnol</span></div><div><b>2 produits</b><span>Développés en parallèle</span></div></div>
+        </div>
+      </section>
+
+      <section id="impact" class="direction direction-impact" aria-labelledby="impact-title">
+        <div class="direction-label"><span>06</span><div><strong id="impact-title">Rapport d’impact</strong><small>Une présentation fondée sur les preuves, les contributions et la progression</small></div></div>
+        <div class="impact-page demo-page">
+          <header><div><b>ERWAN / PORTFOLIO</b><span>MISE À JOUR 09.2026</span></div><nav>PROFIL&nbsp;&nbsp; EXPÉRIENCE&nbsp;&nbsp; RÉALISATIONS</nav></header>
+          <div class="impact-hero"><span>RAPPORT PROFESSIONNEL 2013—2026</span><h2>Du développement<br />à la vision produit.</h2><p>Une expérience construite par étapes, mesurée par ce qui a été livré, appris et amélioré.</p></div>
+          <div class="impact-dashboard"><article><span>01 / DURÉE</span><strong>5+ ans</strong><h3>avec Keyrus</h3><div class="impact-bar"><i style="width:88%"></i></div><p>Refonte, design system, CMS, SEO et nouvelle plateforme.</p></article><article><span>02 / PORTÉE</span><strong>3</strong><h3>dimensions métier</h3><div class="impact-ring">DEV<br />PRODUIT<br />VENTE</div><p>Une pratique qui dépasse progressivement la seule exécution technique.</p></article><article><span>03 / LABORATOIRE</span><strong>2</strong><h3>produits actifs</h3><div class="impact-tags"><i>Viper</i><i>circular.moda</i></div><p>Des idées testées rapidement avec l’aide des LLM.</p></article></div>
+          <div class="impact-footer"><b>Compétences observables</b><span>React / Next.js / Contentful / Supabase / Automatisation / Acquisition</span></div>
+        </div>
+      </section>
+
+      <section id="atelier" class="direction direction-atelier" aria-labelledby="atelier-title">
+        <div class="direction-label"><span>07</span><div><strong id="atelier-title">Atelier éditorial</strong><small>Plus personnel, tactile et narratif, tout en restant professionnel</small></div></div>
+        <div class="atelier-page demo-page">
+          <header><b>Erwan<br />Leblois</b><span>Développeur web indépendant<br />depuis 2013</span><nav>Index&nbsp;&nbsp; À propos&nbsp;&nbsp; Écrire</nav></header>
+          <div class="atelier-hero"><p>Carnet de pratique nº 01</p><h2>Le code comme<br /><em>matière à construire.</em></h2><div class="atelier-note"><span>Note personnelle</span><p>J’ai commencé par démonter, réparer et comprendre. Aujourd’hui, je conçois des produits web en reliant technique, usages et intuition métier.</p></div></div>
+          <div class="atelier-spread"><article><div class="atelier-image"><img src="/images/projects/keyrus-playbook.webp" alt="Aperçu du projet Keyrus" /></div><span>Projet suivi / 2021—Aujourd’hui</span><h3>Une collaboration qui grandit avec le produit.</h3><p>Keyrus, du premier rebranding à une nouvelle infrastructure web.</p></article><aside><span>En parallèle / depuis 2024</span><h3>Deux terrains d’expérimentation.</h3><p><b>Résidence au Brésil</b><br />Produit, contenu et vente.</p><p><b>circular.moda</b><br />Marketplace, acquisition et automatisation.</p></aside></div>
+          <footer><span>Développement · Produit · IA</span><span>Genève / Remote</span></footer>
+        </div>
+      </section>
+
+      <section id="systeme" class="direction direction-systeme" aria-labelledby="systeme-title">
+        <div class="direction-label"><span>08</span><div><strong id="systeme-title">Système produit</strong><small>Une DA qui rend visible l’architecture, la méthode et les connexions</small></div></div>
+        <div class="systeme-page demo-page">
+          <header><b>ERWAN.SYSTEMS</b><nav>01_PROJETS&nbsp;&nbsp; 02_MÉTHODE&nbsp;&nbsp; 03_PARCOURS</nav><span>FR / EN</span></header>
+          <div class="systeme-hero"><div><span>PROFIL / 001</span><h2>Développeur<br />orchestrateur.</h2><p>Je relie interfaces, contenus, données et outils métier pour faire avancer des produits complets.</p></div><aside><span>SYSTÈME ACTIF</span><ul><li><i></i> Front-end</li><li><i></i> CMS & contenu</li><li><i></i> Data & analytics</li><li><i></i> LLM & automatisation</li></ul></aside></div>
+          <div class="systeme-flow"><div class="systeme-node primary"><span>2021—Aujourd’hui</span><b>KEYRUS</b><small>ÉCOSYSTÈME WEB</small></div><div class="systeme-link"><i></i><i></i></div><div class="systeme-node"><span>Depuis 2024</span><b>VIPER</b><small>PRODUIT & VENTE</small></div><div class="systeme-node"><span>Depuis 2024</span><b>CIRCULAR</b><small>MARKETPLACE</small></div></div>
+          <div class="systeme-proof"><span>PRINCIPE</span><p>Comprendre le système entier permet de proposer de meilleures fonctionnalités, puis de les réaliser plus vite avec les bons outils.</p><b>EXPLORER LA MÉTHODE ↗</b></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

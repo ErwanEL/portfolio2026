@@ -1,10 +1,8 @@
 ---
 import '../styles/global.css';
-const years = [
-  { year: '2026', title: 'Lorem ipsum dolor', detail: 'Projet en cours · Exemple', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae justo eget magna fermentum iaculis.' },
-  { year: '2024', title: 'Consectetur adipiscing', detail: 'Expérience · Exemple', text: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' },
-  { year: '2022', title: 'Ut enim ad minim', detail: 'Premiers projets · Exemple', text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.' },
-];
+import ProjectVisual from '../components/ProjectVisual.astro';
+import { projects } from '../data/projects';
+import { timeline } from '../data/timeline';
 ---
 <!doctype html>
 <html lang="fr">
@@ -13,7 +11,7 @@ const years = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Exploration de direction artistique pour le portfolio d’Erwan. Contenus de démonstration." />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Erwan — Portfolio / Étude 01</title>
+    <title>Erwan | Portfolio / Étude 01</title>
   </head>
   <body id="haut">
     <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -28,40 +26,44 @@ const years = [
     </header>
     <main id="contenu" class="wrap">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-index meta"><span class="square"></span> Portfolio — Étude 01 <span class="hero-edition">Édition 2026</span></div>
+        <div class="hero-index meta"><span class="square"></span> Portfolio / Étude 01 <span class="hero-edition">Édition 2026</span></div>
         <h1 id="hero-title">Des idées.<br />Du code<span class="red">.</span><br /><span class="red last-line">Du concret.<span class="hero-arrow" aria-hidden="true">↗</span></span></h1>
         <div class="hero-bottom">
           <p class="meta demo-note">Exploration graphique<br />Contenus fictifs</p>
           <div class="hero-intro"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class="text-link" href="#projets">Explorer les projets <span aria-hidden="true">↓</span></a></div>
-          <span class="folio meta">(01 — 03)</span>
+          <span class="folio meta">(01 / 03)</span>
         </div>
       </section>
       <section id="projets" class="projects section" aria-labelledby="projects-title">
-        <div class="section-heading"><span class="meta section-index">01 / Projets</span><h2 id="projects-title">Une sélection<br />de réalisations<span class="red">.</span></h2><span class="meta section-aside">Deux projets fictifs<br />pour poser le cadre</span></div>
+        <div class="section-heading"><span class="meta section-index">01 / Projets</span><h2 id="projects-title">Une sélection<br />de réalisations<span class="red">.</span></h2><span class="meta section-aside">Projets en cours<br />de présentation</span></div>
         <div class="project-grid">
-          <article class="project">
-            <div class="project-visual visual-one" aria-label="Composition typographique de démonstration pour le projet Lorem">
-              <div class="visual-top meta"><span>Étude digitale / 001</span><span>2026</span></div>
-              <div class="specimen">lo<span>r</span>em<span class="specimen-dot">.</span></div>
-              <div class="visual-bottom meta"><span>Clarté. Structure. Interface.</span><span aria-hidden="true">↗</span></div>
-            </div>
-            <div class="project-caption"><div><p class="meta">01 — Application web</p><h3>Lorem ipsum</h3></div><span class="meta">2026</span></div>
-            <details><summary>À propos de ce projet <span aria-hidden="true">+</span></summary><p>Projet fictif. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></details>
-          </article>
-          <article class="project second-project">
-            <div class="project-visual visual-two" aria-label="Composition typographique de démonstration pour le projet Ipsum">
-              <div class="visual-top meta"><span>Expérience web / 002</span><span>2024</span></div>
-              <div class="specimen second-specimen">ip<span class="outline">sum</span><span class="asterisk" aria-hidden="true">✳</span></div>
-              <div class="visual-bottom meta"><span>Un autre point de vue.</span><span aria-hidden="true">↗</span></div>
-            </div>
-            <div class="project-caption"><div><p class="meta">02 — Plateforme digitale</p><h3>Dolor sit amet</h3></div><span class="meta">2024</span></div>
-            <details><summary>À propos de ce projet <span aria-hidden="true">+</span></summary><p>Projet fictif. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></details>
-          </article>
+          {projects.map((project, i) => <article class:list={['project', { 'second-project': i % 2 === 1 }]}>
+            <a class="project-card-link" href={`/projets/${project.slug}/`} aria-label={`Découvrir le projet ${project.name}`}>
+              <ProjectVisual {...project} />
+              <div class="project-caption"><div><p class="meta">{project.index} / {project.label}</p><h3>{project.name}</h3></div><span class="project-card-arrow" aria-hidden="true">↗</span></div>
+              <span class="project-open text-link">Découvrir le projet <span aria-hidden="true">→</span></span>
+            </a>
+          </article>)}
         </div>
       </section>
       <section id="parcours" class="section journey" aria-labelledby="journey-title">
-        <div class="section-heading"><span class="meta section-index">02 / Parcours</span><h2 id="journey-title">Au fil<br />des années<span class="red">.</span></h2><span class="meta section-aside">Chronologie illustrative<br />Dates et expériences fictives</span></div>
-        <div class="timeline">{years.map((item, i) => <details class="timeline-item" open={i === 0}><summary><span class="year">{item.year}</span><span class="timeline-title">{item.title}<span class="meta">{item.detail}</span></span><span class="toggle" aria-hidden="true">+</span></summary><p>{item.text}</p></details>)}</div>
+        <div class="section-heading"><span class="meta section-index">02 / Parcours</span><h2 id="journey-title">Des premières lignes<br />aux projets d’aujourd’hui<span class="red">.</span></h2><span class="meta section-aside">2013 — 2026<br />Un parcours autodidacte</span></div>
+        <ol class="timeline">
+          {timeline.map((item, i) => <li class="timeline-item" data-timeline-item>
+            <span class="timeline-number meta">{String(i + 1).padStart(2, '0')}</span>
+            <div class="timeline-period">{item.period}</div>
+            <div class="timeline-content">
+              <p class="meta timeline-detail">{item.detail}</p>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              {item.parallel && <aside class="timeline-parallel">
+                <p class="meta">{item.parallel.period}</p>
+                <h4>{item.parallel.title}</h4>
+                <p>{item.parallel.text}</p>
+              </aside>}
+            </div>
+          </li>)}
+        </ol>
       </section>
       <section id="apropos" class="section about" aria-labelledby="about-title">
         <div class="about-sidebar">
@@ -78,6 +80,21 @@ const years = [
         <div><h2 id="about-title">Le sens du détail.<br />La vue d’ensemble<span class="red">.</span></h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><p class="meta about-note">Texte de présentation à venir.</p></div>
       </section>
     </main>
-    <footer class="wrap footer"><a class="wordmark" href="#haut">erwan<span>.</span></a><span class="meta">Portfolio / 2026 — Maquette de direction artistique</span><a class="text-link" href="#haut">Retour en haut <span aria-hidden="true">↑</span></a></footer>
+    <footer class="wrap footer"><a class="wordmark" href="#haut">erwan<span>.</span></a><span class="meta">Portfolio / 2026 / Maquette de direction artistique</span><a class="text-link" href="#haut">Retour en haut <span aria-hidden="true">↑</span></a></footer>
+    <script>
+      const items = document.querySelectorAll('[data-timeline-item]');
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('timeline-motion');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.2 });
+        items.forEach((item) => observer.observe(item));
+      }
+    </script>
   </body>
 </html>

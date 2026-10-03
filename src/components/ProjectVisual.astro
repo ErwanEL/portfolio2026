@@ -1,0 +1,10 @@
+---
+import CircularModaLogo from './CircularModaLogo.astro';
+interface Props { visual: string; name: string; index: string; }
+const { visual, name, index } = Astro.props;
+---
+<div class:list={['project-visual', `visual-${visual}`]}>
+  <div class="visual-top meta"><span>Projet / {index}</span><span>Web</span></div>
+  {visual === 'keyrus' ? <img class="keyrus-logo" src="/images/projects/keyrus-logo.svg" alt="Keyrus" width="335" height="100" /> : visual === 'circular' ? <div class="circular-logo-container"><CircularModaLogo /></div> : <div class="project-type" aria-hidden="true">{visual === 'brazil' ? <>Brazil<br />Residency<span>.</span></> : <>Portfolio<br /><span>2020.</span></>}</div>}
+  <div class="visual-bottom meta"><span>{name}</span><span aria-hidden="true">↗</span></div>
+</div>
